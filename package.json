@@ -1,0 +1,37 @@
+{
+  "name": "ecommerce-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "db:migrate": "pnpm --filter @ecommerce/api db:migrate",
+    "db:migrate:deploy": "pnpm --filter @ecommerce/api db:migrate:deploy",
+    "db:seed": "pnpm --filter @ecommerce/api db:seed",
+    "db:studio": "pnpm --filter @ecommerce/api db:studio",
+    "docker:dev": "docker compose -f infra/compose/docker-compose.dev.yml up -d",
+    "docker:stage": "docker compose -f infra/compose/docker-compose.stage.yml up -d",
+    "docker:prod": "docker compose -f infra/compose/docker-compose.prod.yml up -d",
+    "docker:down": "docker compose -f infra/compose/docker-compose.dev.yml down",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
+    "eslint": "^9.20.0",
+    "typescript": "^5.7.3"
+  }
+}

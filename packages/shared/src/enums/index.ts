@@ -1,0 +1,212 @@
+export enum UserRole {
+  SUPER_ADMIN = 'SUPER_ADMIN',
+  ADMIN = 'ADMIN',
+  MANAGER = 'MANAGER',
+  SUPPORT = 'SUPPORT',
+  CUSTOMER = 'CUSTOMER',
+}
+
+export enum OrderStatus {
+  PENDING = 'PENDING',
+  PAYMENT_PENDING = 'PAYMENT_PENDING',
+  PAYMENT_FAILED = 'PAYMENT_FAILED',
+  CONFIRMED = 'CONFIRMED',
+  PROCESSING = 'PROCESSING',
+  PACKED = 'PACKED',
+  SHIPPED = 'SHIPPED',
+  IN_TRANSIT = 'IN_TRANSIT',
+  OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY',
+  DELIVERED = 'DELIVERED',
+  CANCELLED = 'CANCELLED',
+  REFUND_REQUESTED = 'REFUND_REQUESTED',
+  PARTIALLY_REFUNDED = 'PARTIALLY_REFUNDED',
+  FULLY_REFUNDED = 'FULLY_REFUNDED',
+  RETURN_REQUESTED = 'RETURN_REQUESTED',
+  RETURNED = 'RETURNED',
+}
+
+export enum PaymentStatus {
+  PENDING = 'PENDING',
+  PROCESSING = 'PROCESSING',
+  AUTHORIZED = 'AUTHORIZED',
+  CAPTURED = 'CAPTURED',
+  PAID = 'PAID',
+  FAILED = 'FAILED',
+  CANCELLED = 'CANCELLED',
+  REFUND_PENDING = 'REFUND_PENDING',
+  PARTIALLY_REFUNDED = 'PARTIALLY_REFUNDED',
+  FULLY_REFUNDED = 'FULLY_REFUNDED',
+  CHARGEBACK = 'CHARGEBACK',
+}
+
+export enum PaymentMethod {
+  STRIPE_CARD = 'STRIPE_CARD',
+  STRIPE_LINK = 'STRIPE_LINK',
+  MERCADOPAGO = 'MERCADOPAGO',
+  PAYPAL = 'PAYPAL',
+  CASH_ON_DELIVERY = 'CASH_ON_DELIVERY',
+  BANK_TRANSFER = 'BANK_TRANSFER',
+}
+
+export enum PaymentGateway {
+  STRIPE = 'STRIPE',
+  MERCADOPAGO = 'MERCADOPAGO',
+  PAYPAL = 'PAYPAL',
+}
+
+export enum ProductStatus {
+  DRAFT = 'DRAFT',
+  ACTIVE = 'ACTIVE',
+  ARCHIVED = 'ARCHIVED',
+}
+
+export enum InventoryPolicy {
+  DENY = 'DENY',
+  CONTINUE = 'CONTINUE',
+}
+
+export enum InventoryMovementType {
+  PURCHASE = 'PURCHASE',
+  SALE = 'SALE',
+  RETURN = 'RETURN',
+  ADJUSTMENT = 'ADJUSTMENT',
+  RESERVATION = 'RESERVATION',
+  RESERVATION_EXPIRED = 'RESERVATION_EXPIRED',
+  RESERVATION_CONFIRMED = 'RESERVATION_CONFIRMED',
+  TRANSFER_IN = 'TRANSFER_IN',
+  TRANSFER_OUT = 'TRANSFER_OUT',
+  DAMAGE = 'DAMAGE',
+}
+
+export enum DiscountType {
+  PERCENTAGE = 'PERCENTAGE',
+  FIXED_AMOUNT = 'FIXED_AMOUNT',
+  FREE_SHIPPING = 'FREE_SHIPPING',
+  BUY_X_GET_Y = 'BUY_X_GET_Y',
+}
+
+export enum CouponStatus {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  EXPIRED = 'EXPIRED',
+  DEPLETED = 'DEPLETED',
+}
+
+export enum ReviewStatus {
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED',
+  FLAGGED = 'FLAGGED',
+}
+
+export enum ChatStatus {
+  OPEN = 'OPEN',
+  IN_PROGRESS = 'IN_PROGRESS',
+  RESOLVED = 'RESOLVED',
+  CLOSED = 'CLOSED',
+}
+
+export enum TicketPriority {
+  LOW = 'LOW',
+  MEDIUM = 'MEDIUM',
+  HIGH = 'HIGH',
+  URGENT = 'URGENT',
+}
+
+export enum WebhookEventStatus {
+  PENDING = 'PENDING',
+  PROCESSING = 'PROCESSING',
+  PROCESSED = 'PROCESSED',
+  FAILED = 'FAILED',
+  DEAD_LETTER = 'DEAD_LETTER',
+}
+
+export enum ImportJobStatus {
+  PENDING = 'PENDING',
+  VALIDATING = 'VALIDATING',
+  PROCESSING = 'PROCESSING',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
+  PARTIAL = 'PARTIAL',
+}
+
+export enum ExportJobStatus {
+  PENDING = 'PENDING',
+  PROCESSING = 'PROCESSING',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
+}
+
+export enum ImportEntityType {
+  PRODUCTS = 'PRODUCTS',
+  VARIANTS = 'VARIANTS',
+  INVENTORY = 'INVENTORY',
+  CUSTOMERS = 'CUSTOMERS',
+  ORDERS = 'ORDERS',
+}
+
+export enum BackupStatus {
+  RUNNING = 'RUNNING',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
+  DELETED = 'DELETED',
+}
+
+export enum AddressType {
+  SHIPPING = 'SHIPPING',
+  BILLING = 'BILLING',
+  BOTH = 'BOTH',
+}
+
+export enum ShippingRuleType {
+  FLAT_RATE = 'FLAT_RATE',
+  FREE = 'FREE',
+  WEIGHT_BASED = 'WEIGHT_BASED',
+  ORDER_VALUE_BASED = 'ORDER_VALUE_BASED',
+  CALCULATED = 'CALCULATED',
+}
+
+export enum FraudRiskLevel {
+  LOW = 'LOW',
+  MEDIUM = 'MEDIUM',
+  HIGH = 'HIGH',
+  BLOCKED = 'BLOCKED',
+}
+
+export enum NotificationChannel {
+  EMAIL = 'EMAIL',
+  PUSH = 'PUSH',
+  SMS = 'SMS',
+  IN_APP = 'IN_APP',
+}
+
+export enum AuditAction {
+  CREATE = 'CREATE',
+  UPDATE = 'UPDATE',
+  DELETE = 'DELETE',
+  LOGIN = 'LOGIN',
+  LOGOUT = 'LOGOUT',
+  FAILED_LOGIN = 'FAILED_LOGIN',
+  EXPORT = 'EXPORT',
+  IMPORT = 'IMPORT',
+  REFUND = 'REFUND',
+  BULK_UPDATE = 'BULK_UPDATE',
+}
+
+export enum TaxCalculationMethod {
+  INCLUSIVE = 'INCLUSIVE',
+  EXCLUSIVE = 'EXCLUSIVE',
+}
+
+export enum WeightUnit {
+  KG = 'KG',
+  G = 'G',
+  LB = 'LB',
+  OZ = 'OZ',
+}
+
+export enum DimensionUnit {
+  CM = 'CM',
+  MM = 'MM',
+  IN = 'IN',
+}
