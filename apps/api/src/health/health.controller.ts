@@ -26,7 +26,7 @@ export class HealthController {
    * Detailed health check including queue stats and pending counts - admin only.
    */
   @ApiBearerAuth('access-token')
-  @Roles(UserRole.ADMIN, UserRole.SUPER_ADMIN)
+  @Roles(UserRole.ADMIN, UserRole.SUPER_ADMIN, UserRole.MANAGER)
   @Get('detailed')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({ summary: 'Detailed health check including queues (admin)' })

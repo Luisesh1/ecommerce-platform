@@ -30,7 +30,7 @@ export class TrackingController {
   @ApiOperation({ summary: 'Get tracking configuration (GA4, Meta)' })
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
-  @Get('api/admin/settings/tracking')
+  @Get('admin/settings/tracking')
   async getConfig() {
     return this.trackingService.getConfig();
   }
@@ -38,7 +38,7 @@ export class TrackingController {
   @ApiOperation({ summary: 'Update tracking configuration' })
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
-  @Patch('api/admin/settings/tracking')
+  @Patch('admin/settings/tracking')
   async updateConfig(@Body() dto: UpdateTrackingConfigDto) {
     return this.trackingService.updateConfig(dto);
   }

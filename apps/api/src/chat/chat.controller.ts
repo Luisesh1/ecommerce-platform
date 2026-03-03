@@ -28,7 +28,7 @@ class UpdateConversationDto {
 @ApiTags('Admin - Chat')
 @ApiBearerAuth()
 @Roles(UserRole.ADMIN, UserRole.SUPPORT)
-@Controller('api/admin/chat')
+@Controller('admin/chat')
 export class ChatController {
   constructor(
     private readonly chatService: ChatService,

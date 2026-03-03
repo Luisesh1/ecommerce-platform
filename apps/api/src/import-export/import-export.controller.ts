@@ -20,8 +20,8 @@ import { UserRole } from '@prisma/client';
 
 @ApiTags('Admin - Import / Export')
 @ApiBearerAuth()
-@Roles(UserRole.ADMIN, UserRole.SUPPORT)
-@Controller('api/admin')
+@Roles(UserRole.ADMIN, UserRole.SUPER_ADMIN, UserRole.SUPPORT)
+@Controller('admin')
 export class ImportExportController {
   constructor(private readonly importExportService: ImportExportService) {}
 

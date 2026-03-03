@@ -16,7 +16,7 @@ import { UserRole } from '@prisma/client';
 @ApiTags('Admin - Settings')
 @ApiBearerAuth()
 @Roles(UserRole.ADMIN)
-@Controller('api/admin/settings')
+@Controller('admin/settings')
 export class SettingsController {
   constructor(private readonly settingsService: SettingsService) {}
 
@@ -106,4 +106,23 @@ export class SettingsController {
       return { success: false, message: (err as Error).message };
     }
   }
+
+  @Get('general')
+  getGeneral() { return this.settingsService.getAllSettings(); }
+
+  @Patch('general')
+  updateGeneral(@Body() body: any) { return this.settingsService.set(body.key, body.value); }
+
+  @Get('currency')
+  getCurrency() { return this.settingsService.getAll('general'); }
+
+  @Get('email')
+  getEmail() { return this.settingsService.getAll('email'); }
+
+  @Get('notifications')
+  getNotifications() { return this.settingsService.getAll('notifications'); }
+
+  @Get('integrations')
+  getIntegrations() { return this.settingsService.getAll('integrations'); }
+
 }

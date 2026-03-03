@@ -36,7 +36,7 @@ export class ShippingController {
   @ApiQuery({ name: 'orderValue', required: false, description: 'Order value in cents' })
   @ApiQuery({ name: 'weightGrams', required: false, description: 'Total weight in grams' })
   @Public()
-  @Get('api/shipping/estimate')
+  @Get('shipping/estimate')
   async estimate(
     @Query('cp') cp?: string,
     @Query('country') country?: string,
@@ -58,7 +58,7 @@ export class ShippingController {
   @ApiOperation({ summary: 'List all shipping zones' })
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
-  @Get('api/admin/shipping/zones')
+  @Get('admin/shipping/zones')
   listZones() {
     return this.shippingService.listZones();
   }
@@ -67,7 +67,7 @@ export class ShippingController {
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
   @HttpCode(HttpStatus.CREATED)
-  @Post('api/admin/shipping/zones')
+  @Post('admin/shipping/zones')
   createZone(@Body() dto: CreateShippingZoneDto) {
     return this.shippingService.createZone(dto);
   }
@@ -75,7 +75,7 @@ export class ShippingController {
   @ApiOperation({ summary: 'Update a shipping zone' })
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
-  @Patch('api/admin/shipping/zones/:id')
+  @Patch('admin/shipping/zones/:id')
   updateZone(@Param('id') id: string, @Body() dto: UpdateShippingZoneDto) {
     return this.shippingService.updateZone(id, dto);
   }
@@ -84,7 +84,7 @@ export class ShippingController {
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
   @HttpCode(HttpStatus.NO_CONTENT)
-  @Delete('api/admin/shipping/zones/:id')
+  @Delete('admin/shipping/zones/:id')
   deleteZone(@Param('id') id: string) {
     return this.shippingService.deleteZone(id);
   }
@@ -94,7 +94,7 @@ export class ShippingController {
   @ApiOperation({ summary: 'List methods for a zone' })
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
-  @Get('api/admin/shipping/zones/:zoneId/methods')
+  @Get('admin/shipping/zones/:zoneId/methods')
   listMethods(@Param('zoneId') zoneId: string) {
     return this.shippingService.listMethods(zoneId);
   }
@@ -103,7 +103,7 @@ export class ShippingController {
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
   @HttpCode(HttpStatus.CREATED)
-  @Post('api/admin/shipping/zones/:zoneId/methods')
+  @Post('admin/shipping/zones/:zoneId/methods')
   createMethod(@Param('zoneId') zoneId: string, @Body() dto: CreateShippingMethodDto) {
     return this.shippingService.createMethod(zoneId, dto);
   }
@@ -111,7 +111,7 @@ export class ShippingController {
   @ApiOperation({ summary: 'Update a shipping method' })
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
-  @Patch('api/admin/shipping/methods/:id')
+  @Patch('admin/shipping/methods/:id')
   updateMethod(@Param('id') id: string, @Body() dto: UpdateShippingMethodDto) {
     return this.shippingService.updateMethod(id, dto);
   }
@@ -120,7 +120,7 @@ export class ShippingController {
   @ApiBearerAuth()
   @Roles(UserRole.ADMIN)
   @HttpCode(HttpStatus.NO_CONTENT)
-  @Delete('api/admin/shipping/methods/:id')
+  @Delete('admin/shipping/methods/:id')
   deleteMethod(@Param('id') id: string) {
     return this.shippingService.deleteMethod(id);
   }

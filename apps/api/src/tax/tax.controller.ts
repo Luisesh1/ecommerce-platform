@@ -64,7 +64,7 @@ class UpdateTaxRateDto {
 @ApiTags('Admin - Tax')
 @ApiBearerAuth()
 @Roles(UserRole.ADMIN)
-@Controller('api/admin/tax')
+@Controller('admin/tax')
 export class TaxController {
   constructor(private readonly taxService: TaxService) {}
 

@@ -107,7 +107,7 @@ export default function SoportePage() {
 
   const { data: agents = [] } = useQuery<Agent[]>({
     queryKey: ['admin-agents'],
-    queryFn: () => api.get<Agent[]>('/admin/users?role=AGENT'),
+    queryFn: () => api.get<Agent[]>('/users?role=AGENT'),
   });
 
   useEffect(() => {
